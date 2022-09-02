@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  box-shadow: 2px 2px 2px lightgray;
+  font-size: 18px;
+  background-color: tomato;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.cart-counter {
+  background-color: rgb(177, 32, 32);
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 14px;
+  text-align: center;
+  z-index: 100;
+  position: fixed;
+  top: 2px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+}

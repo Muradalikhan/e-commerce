@@ -1,0 +1,42 @@
+.List {
+  /* padding: 20px; */
+  width: 8%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  /* background-color: lightblue; */
+  float: left;
+  z-index: 100;
+  position: fixed;
+  margin-top: 15px;
+}
+
+.ListItem {
+  padding: 13px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  line-height: 30px;
+  border-bottom: 1px solid lightgreen;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  cursor: pointer;
+  align-items: left;
+  width: 100px;
+  transition: width 1s;
+  background-color: white;
+}
+.ListItem:hover {
+  width: 150px;
+}
+.active {
+  border-bottom: 5px solid red;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 768px) {
+  .List {
+    display: none;
+  }
+}

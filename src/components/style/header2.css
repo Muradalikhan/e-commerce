@@ -1,0 +1,16 @@
+
+
+.header2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 4px;
+    background-color: #dee2e6;
+    color: #41464b;
+}
+
+.custom{
+    cursor: pointer;
+}
