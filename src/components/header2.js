@@ -2,8 +2,10 @@ import React from "react";
 import "./style/header2.css";
 import { useDispatch } from "react-redux";
 import { catogry } from "../config/redux/catogries";
+import { useNavigate } from "react-router-dom";
 
 function Header2() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const catogries = [
     "all",
@@ -13,6 +15,11 @@ function Header2() {
     "women's clothing",
   ];
 
+  const navigateTabs = (item) => {
+    navigate("/");
+    dispatch(catogry(item));
+  };
+
   return (
     <div className="header2">
       {catogries.map((item, ind) => {
@@ -20,9 +27,7 @@ function Header2() {
           <div
             key={ind}
             className="mx-2 custom"
-            onClick={() => {
-              dispatch(catogry(item));
-            }}
+            onClick={() => navigateTabs(item)}
           >
             {item}
           </div>
