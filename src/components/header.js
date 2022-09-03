@@ -20,9 +20,7 @@ function Header() {
         <b>OnlineShop</b>
       </div>
       <div>
-        {cartCounter > 0 ? (
-          <span className="cart-counter">{cartCounter}</span>
-        ) : null}
+        {cartCounter > 0 && <span className="cart-counter">{cartCounter}</span>}
         <FontAwesomeIcon
           icon={faShoppingCart}
           color="White"
