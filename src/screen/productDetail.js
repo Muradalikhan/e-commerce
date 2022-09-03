@@ -5,8 +5,6 @@ import Detail from "../components/detail";
 const ProductDetail = () => {
   return (
     <>
-      <Header />
-      <Header2 />
       <Detail />
     </>
   );
