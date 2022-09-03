@@ -5,6 +5,7 @@ import { baskitItem } from "../config/redux/basket";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
+import Loader from "../components/loader";
 
 const Products = () => {
   const [arr, setArr] = useState([]);
@@ -58,7 +59,7 @@ const Products = () => {
   return (
     <>
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : products.length > 0 ? (
         products.map((item, ind) => (
           <Card
