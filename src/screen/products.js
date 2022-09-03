@@ -70,20 +70,10 @@ const Products = () => {
           />
         ))
       ) : (
-        <p>No data found</p>
+        <p className="p-5">No data found</p>
       )}
       ;
-      <ToastContainer
-        position="top-center"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-      />
+      <ToastContainer position="top-center" autoClose={1000} />
     </>
   );
 };
