@@ -5,7 +5,7 @@ import "./style/detail.css";
 
 const Detail = () => {
   const location = useLocation();
-  const { title, description, price, image, category } = location.state;
+  const { title, description, price, image, category } = location?.state;
 
   return (
     <div>
@@ -18,7 +18,14 @@ const Detail = () => {
                 <h4 className="title-detail ">{title}</h4>
                 <p>{description}</p>
                 <p className="price-tag">{price}</p>
-                <Button title="Add to Cart" style={{width:'100%',backgroundColor:'tomato',padding:'10px'}}/>
+                <Button
+                  title="Add to Cart"
+                  style={{
+                    width: "100%",
+                    backgroundColor: "tomato",
+                    padding: "10px",
+                  }}
+                />
               </div>
             </div>
 
