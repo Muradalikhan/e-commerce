@@ -1,18 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { incCartCounter } from "../config/redux/showCart";
-import { baskitItem } from "../config/redux/basket";
+import { addToBaskit } from "../config/redux/basket";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
 import Loader from "../components/loader";
 
 const Products = () => {
-  const [arr, setArr] = useState([]);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const catogry = useSelector((state) => state.catogry.value);
+  const productInCart = useSelector((state) => state.baskit.value);
 
   const fetchData = useCallback(async () => {
     if (catogry !== "all" && catogry !== "") {
@@ -35,17 +34,15 @@ const Products = () => {
   }, [catogry]);
 
   const addtoCart = (item) => {
+    dispatch(addToBaskit({...item,quantity:1}));
     toast.success(`Your item has added to the cart`);
-    setArr([...arr, item]);
-    dispatch(incCartCounter());
   };
 
   useEffect(() => {
-    console.log(arr);
-    if (arr) {
-      dispatch(baskitItem(arr));
+    if (productInCart) {
+      console.log("productInCart", productInCart);
     }
-  }, [arr]);
+  }, [productInCart]);
 
   useEffect(() => {
     fetchData();
@@ -66,7 +63,7 @@ const Products = () => {
             key={ind}
             item={item}
             onClick={() => viewdetails(item)}
-            addtoCart={addtoCart}
+            addtoCart={() => addtoCart(item)}
           />
         ))
       ) : (
