@@ -4,11 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useSelector, useDispatch } from "react-redux";
 import { showCart } from "../config/redux/showCart";
+import { Link } from "react-router-dom";
 
 function Header() {
   const dispatch = useDispatch();
   const showCartstate = useSelector((state) => state.showCart.value);
-  const cartCounter = useSelector((state) => state.showCart.counter);
+  const productInCart = useSelector((state) => state.baskit.value);
 
   const cartShow = () => {
     dispatch(showCart(!showCartstate));
@@ -17,10 +18,10 @@ function Header() {
   return (
     <div className="header">
       <div>
-        <b>OnlineShop</b>
+        <b><Link to='/'>OnlineShop</Link></b>
       </div>
-      <div>
-        {cartCounter > 0 && <span className="cart-counter">{cartCounter}</span>}
+      <div role="button">
+        {productInCart.length > 0 && <span className="cart-counter">{productInCart.length}</span>}
         <FontAwesomeIcon
           icon={faShoppingCart}
           color="White"
