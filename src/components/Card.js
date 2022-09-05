@@ -2,10 +2,10 @@ import React from "react";
 import Button from "./Button";
 import "./style/card.css";
 
-const Card = ({ item, addtoCart }) => {
+const Card = ({ item,onClick, addtoCart }) => {
   return (
-    <div className="card">
-      <img className="img" src={item.image} alt="img" />
+    <div className="card" role="button" >
+      <img className="img" src={item.image} alt="img" onClick={onClick}/>
       <div>
         <h3 className="title">
           {item.title.length > 10 ? item.title.substring(0, 10) : item.title}
