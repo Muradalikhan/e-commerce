@@ -3,10 +3,11 @@ import { useLocation } from "react-router-dom";
 import Button from "./Button.js";
 import "./style/detail.css";
 
-const Detail = () => {
+const Detail = ({addtoCart}) => {
   const location = useLocation();
   const { title, description, price, image, category } = location?.state;
 
+ 
   return (
     <div>
       <h1 className="p-2 bg-info">{category}</h1>
@@ -33,7 +34,7 @@ const Detail = () => {
               <img
                 className="d-block w-100 image-detail"
                 src={image}
-                alt="image"
+                alt="product-img"
               />
             </div>
           </div>
